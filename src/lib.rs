@@ -4,7 +4,7 @@ use std::task::{Context, Poll};
 
 // https://doc.rust-lang.org/book/ch10-02-traits.html#defining-a-trait
 pub trait Summary {
-    type SummarizeFuture<'a>: Future<Output = String> + 'a
+    type SummarizeFuture<'a>: Future<Output = String>
     where
         Self: 'a;
     fn summarize<'a>(&'a self) -> Self::SummarizeFuture<'a>;
